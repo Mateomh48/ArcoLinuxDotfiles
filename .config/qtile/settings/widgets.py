@@ -14,6 +14,22 @@ def separator():
     return widget.Sep(**base(), linewidth=0, padding=5)
 
 
+from libqtile import widget
+from .theme import colors
+
+# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
+
+def base(fg='text', bg='dark'): 
+    return {
+        'foreground': colors[fg],
+        'background': colors[bg]
+    }
+
+
+def separator():
+    return widget.Sep(**base(), linewidth=0, padding=5)
+
+
 def icon(fg='text', bg='dark', fontsize=16, text="?"):
     return widget.TextBox(
         **base(fg, bg),
@@ -81,13 +97,25 @@ primary_widgets = [
         custom_command='checkupdates',
     ),
 
-    powerline('color3', 'color4'),
+    # powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    # icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
+    # widget.Net(**base(bg='color3'), interface='wlp2s0'),
 
-    powerline('color2', 'color3'),
+    powerline('light','color4'),
+
+    icon(bg='light', text=" "),
+    widget.Memory(**base(bg='light', fg='dark')),
+
+    icon(bg='light', fg='dark', text="| "),
+    widget.Battery(**base(bg='light', fg='dark'), format="{percent:2.0%}  {hour:d}:{min:02d}"),
+
+    powerline('dark', 'light'),
+    
+    widget.CPU(**base(fg='light', bg='dark'), format="CPU {load_percent}%"),
+
+    powerline('color2', 'dark'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 

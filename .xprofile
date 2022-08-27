@@ -17,7 +17,7 @@ picom &
 # Network
 nm-applet &
 # Keyboard Layout
-setxkbmap es &
+#setxkbmap us &
 # Automount Devices
 udiskie -t &
 # Java Fonts
