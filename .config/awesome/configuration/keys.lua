@@ -29,7 +29,7 @@ awful.keyboard.append_global_keybindings({
 	end, { description = "open terminal", group = "app" }),
 
 	--- App launcher
-	awful.key({ mod }, "d", function()
+	awful.key({ mod }, "n", function()
 		awful.spawn.with_shell(apps.default.app_launcher)
 	end, { description = "open app launcher", group = "app" }),
 
@@ -319,7 +319,7 @@ client.connect_signal("request::default_keybindings", function()
 		end),
 
 		--- Close window
-		awful.key({ mod }, "q", function()
+		awful.key({ mod }, "w", function()
 			client.focus:kill()
 		end),
 
