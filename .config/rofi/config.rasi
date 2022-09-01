@@ -180,4 +180,5 @@ configuration {
 */
 }
 //@theme "/home/mateo/.local/share/rofi/themes/flamingo.rasi"
-@theme "/usr/share/rofi/themes/style-7.rasi"
+//@theme "/usr/share/rofi/themes/style-7.rasi"
+@theme "/usr/share/rofi/themes/style-1.rasi"
