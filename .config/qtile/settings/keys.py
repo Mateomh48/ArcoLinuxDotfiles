@@ -87,4 +87,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Brightness
     ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+
+    # Keyboard Brightness
+    ([], "XF86KbdBrightnessUp", lazy.spawn("asusctl -n")),
+    ([], "XF86KbdBrightnessDown", lazy.spawn("asusctl -p")),
+
+    ([], "XF86Launch4", lazy.spawn("asusctl profile -p")),
 ]]
